@@ -1,6 +1,5 @@
 const db = require('../models')
 const Course = db.course
-const Category = db.category
 
 const addCourse = async (req, res) => {
     try {
@@ -44,28 +43,6 @@ const updateCourse = async (req, res) => {
 
     res.status(200).send(course)
 }
-
-// const getCoursesByCategoryId = async (req, res) => {
-
-//     try {
-//         const { category_id} = req.query;
-
-//         const search = {};
-//         if (category_id) {
-//             search.category_id = category_id
-//         }
-//         const courses = await Course.findAll({ where: search });
-//         if (courses.length > 0) {
-//             res.status(200).json(courses);
-//         } else {
-//             res.status(404).json({ message: 'No courses found' });
-//         }
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Internal Server Error');
-//     }
-// };
-
 
 const getCoursesByCategoryId = async (req, res) => {
     try {
